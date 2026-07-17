@@ -376,6 +376,65 @@ section { padding: 96px 0; }
 .contact-panel dd { font-size: 1.05rem; }
 .contact-panel a { color: var(--forest); text-underline-offset: 3px; }
 
+/* ---------- Review banner (animated marquee of Facebook reviews) ----------
+   Markup pattern:
+   <section class="reviews-band" aria-label="Client reviews">
+     <div class="reviews-track">
+       ...review cards... (all cards duplicated once for a seamless loop,
+       duplicates marked aria-hidden="true")
+     </div>
+   </section>
+*/
+.reviews-band {
+  background: var(--linen);
+  padding: 72px 0;
+  overflow: hidden;
+}
+.reviews-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 0 10px;
+}
+.review-card {
+  background: var(--ivory);
+  border: 1px solid var(--stone);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.review-card blockquote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.4;
+  padding-bottom: 2px;
+}
+.review-card cite {
+  font-style: normal;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--ink) 70%, var(--sage));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reviews-track { animation: reviews-scroll 45s linear infinite; }
+  .reviews-track:hover { animation-play-state: paused; }
+  @keyframes reviews-scroll {
+    to { transform: translateX(-50%); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reviews-band { overflow-x: auto; }
+}
+@media (max-width: 767px) {
+  .review-card { width: 300px; padding: 24px; }
+  .reviews-band { padding: 48px 0; }
+}
+
 /* ---------- Booking strip ---------- */
 .booking {
   background: var(--forest);
