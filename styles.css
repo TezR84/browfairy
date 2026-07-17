@@ -390,6 +390,25 @@ section { padding: 96px 0; }
   padding: 72px 0;
   overflow: hidden;
 }
+.reviews-band h2 {
+  text-align: center;
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  margin-bottom: 44px;
+}
+.reviews-more {
+  text-align: center;
+  margin-top: 44px;
+  font-size: 0.95rem;
+}
+.reviews-more a {
+  color: var(--forest);
+  text-underline-offset: 3px;
+}
+.reviews-group {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
 .reviews-track {
   display: flex;
   gap: 20px;
@@ -423,8 +442,10 @@ section { padding: 96px 0; }
 @media (prefers-reduced-motion: no-preference) {
   .reviews-track { animation: reviews-scroll 45s linear infinite; }
   .reviews-track:hover { animation-play-state: paused; }
+  /* Track holds two identical groups; sliding half the total width
+     minus half the gap lands exactly on the second group for a seamless loop */
   @keyframes reviews-scroll {
-    to { transform: translateX(-50%); }
+    to { transform: translateX(calc(-50% - 10px)); }
   }
 }
 @media (prefers-reduced-motion: reduce) {
