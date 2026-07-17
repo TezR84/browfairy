@@ -527,6 +527,13 @@ section { padding: 96px 0; }
 .steps { display: grid; gap: 24px; margin-bottom: 28px; }
 .step { display: flex; gap: 18px; align-items: flex-start; }
 .step p { margin-bottom: 0; }
+.menu-group .icon-circle { margin-bottom: 18px; }
+.booking .steps {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: left;
+}
+.booking .step p { color: color-mix(in srgb, var(--ivory) 88%, var(--forest)); margin: 0; }
 
 .footer-tagline {
   font-family: "Allura", cursive;
