@@ -477,6 +477,74 @@ section { padding: 96px 0; }
   text-underline-offset: 3px;
 }
 
+/* ---------- Jungle leaf decorations ----------
+   Faint monoline palm fronds tucked into section corners, matching the
+   hand-drawn icon style. Ivory strokes on sage/forest bands, sage strokes
+   on linen sections. Pure decoration: behind content, no pointer events. */
+.hero, .page-band, .booking, .split, .reviews-band { position: relative; overflow: hidden; }
+.hero .wrap, .page-band .wrap, .booking .wrap, .split .wrap,
+.reviews-band .wrap, .reviews-band .reviews-track { position: relative; z-index: 1; }
+
+.page-band::after, .hero::after, .booking::after, .split::before, .reviews-band::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.page-band::after {
+  right: -50px;
+  top: -30px;
+  width: 300px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23F8F0E9' stroke-width='1.2' stroke-linecap='round'><path d='M12 92C30 65 55 35 88 12'/><path d='M30 72C20 66 14 58 12 48M38 63C30 54 27 46 27 37M47 54C40 44 38 36 40 27M57 45C52 35 52 27 55 19M67 36C64 27 65 20 69 13M30 72C38 74 46 74 53 71M40 61C48 63 56 62 62 58M50 51C58 52 65 50 71 46M60 41C68 41 74 38 79 33M70 31C77 30 82 27 86 22'/></svg>");
+  opacity: 0.16;
+  transform: rotate(12deg);
+}
+.hero::after {
+  left: -70px;
+  bottom: -60px;
+  width: 380px;
+  height: 380px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23F8F0E9' stroke-width='1.2' stroke-linecap='round'><path d='M12 92C30 65 55 35 88 12'/><path d='M30 72C20 66 14 58 12 48M38 63C30 54 27 46 27 37M47 54C40 44 38 36 40 27M57 45C52 35 52 27 55 19M67 36C64 27 65 20 69 13M30 72C38 74 46 74 53 71M40 61C48 63 56 62 62 58M50 51C58 52 65 50 71 46M60 41C68 41 74 38 79 33M70 31C77 30 82 27 86 22'/></svg>");
+  opacity: 0.12;
+  transform: scaleX(-1) rotate(8deg);
+}
+.booking::after {
+  left: -60px;
+  bottom: -50px;
+  width: 320px;
+  height: 320px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23F8F0E9' stroke-width='1.2' stroke-linecap='round'><path d='M12 92C30 65 55 35 88 12'/><path d='M30 72C20 66 14 58 12 48M38 63C30 54 27 46 27 37M47 54C40 44 38 36 40 27M57 45C52 35 52 27 55 19M67 36C64 27 65 20 69 13M30 72C38 74 46 74 53 71M40 61C48 63 56 62 62 58M50 51C58 52 65 50 71 46M60 41C68 41 74 38 79 33M70 31C77 30 82 27 86 22'/></svg>");
+  opacity: 0.12;
+  transform: scaleX(-1) rotate(-6deg);
+}
+.split::before {
+  right: -60px;
+  bottom: -50px;
+  width: 300px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%2382928D' stroke-width='1.2' stroke-linecap='round'><path d='M12 92C30 65 55 35 88 12'/><path d='M30 72C20 66 14 58 12 48M38 63C30 54 27 46 27 37M47 54C40 44 38 36 40 27M57 45C52 35 52 27 55 19M67 36C64 27 65 20 69 13M30 72C38 74 46 74 53 71M40 61C48 63 56 62 62 58M50 51C58 52 65 50 71 46M60 41C68 41 74 38 79 33M70 31C77 30 82 27 86 22'/></svg>");
+  opacity: 0.2;
+  transform: rotate(-100deg);
+}
+.reviews-band::before {
+  left: -55px;
+  top: -45px;
+  width: 260px;
+  height: 260px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%2382928D' stroke-width='1.2' stroke-linecap='round'><path d='M12 92C30 65 55 35 88 12'/><path d='M30 72C20 66 14 58 12 48M38 63C30 54 27 46 27 37M47 54C40 44 38 36 40 27M57 45C52 35 52 27 55 19M67 36C64 27 65 20 69 13M30 72C38 74 46 74 53 71M40 61C48 63 56 62 62 58M50 51C58 52 65 50 71 46M60 41C68 41 74 38 79 33M70 31C77 30 82 27 86 22'/></svg>");
+  opacity: 0.18;
+  transform: scaleX(-1) rotate(170deg);
+}
+@media (max-width: 767px) {
+  .page-band::after, .booking::after, .split::before, .reviews-band::before {
+    width: 190px;
+    height: 190px;
+  }
+  .hero::after { width: 240px; height: 240px; }
+}
+
 /* ---------- Script accents & line icons (from brand social graphics) ---------- */
 .script { font-family: "Allura", cursive; font-weight: 400; }
 .script-divider {
