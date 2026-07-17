@@ -1,6 +1,10 @@
 # Reference screenshots, not part of the website
 colour palette/
 
+# Local tooling state
+.wrangler/
+.claude/
+
 # OS clutter
 Thumbs.db
 desktop.ini

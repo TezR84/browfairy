@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers Static Assets config for The Brow Fairy website.
+  // Assets-only project: no Worker script, just static file serving.
+  "name": "browfairy",
+  "compatibility_date": "2026-07-17",
+  "assets": {
+    // Serve the project root as static assets
+    "directory": "./"
+  }
+}
