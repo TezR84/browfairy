@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Brow Fairy | Brow Design &amp; Make Up Artistry</title>
-<meta name="description" content="The Brow Fairy: bespoke brow shaping, tinting and lamination, plus makeup artistry for weddings and events.">
+<title>The Brow Fairy | Boutique Brow, Lash &amp; Makeup Studio, Lowestoft</title>
+<meta name="description" content="The Brow Fairy: a boutique brow design, lash, micropigmentation and makeup artistry studio in Lowestoft, Suffolk. Considered treatments, natural-looking results.">
 <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
       <a href="about.html">About me</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="aftercare.html">Aftercare</a>
       <a href="news.html">Latest news</a>
       <a href="contact.html">Contact</a>
       <a class="btn btn-light btn-nav" href="https://facesconsent.com/bookings/therealbeautyco" target="_blank" rel="noopener">Book now</a>
@@ -30,52 +31,230 @@
 
 <main>
 
-  <section class="hero" style="padding: 0;">
-    <div class="wrap hero-grid">
-      <div>
-        <h1 class="reveal">Brows designed for <em>the face they frame</em></h1>
-        <p class="reveal">Bespoke brow shaping, tinting and lamination, plus makeup artistry for weddings and events. Gentle, considered, tailored to you.</p>
+  <!-- Hero -->
+  <section class="hero-full">
+    <div class="hero-full-media img-reveal">
+      <!-- Sourced from Unsplash (free licence): a beautician applying eyelash extensions -->
+      <img src="assets/photos/lash-treatment-2.jpg" alt="Close-up of a lash treatment in progress at a beauty studio" loading="eager">
+    </div>
+    <div class="wrap">
+      <div class="hero-full-content">
+        <p class="eyebrow on-dark reveal">Boutique brow &amp; beauty studio &middot; Lowestoft, Suffolk</p>
+        <h1 class="display-heading reveal">Brows designed for <em class="script" style="font-size: 1em; color: var(--champagne);">the face they frame</em></h1>
+        <p class="reveal">Bespoke brow design, lash treatments, micropigmentation and makeup artistry. Considered, unhurried, and built around natural-looking results.</p>
         <div class="hero-ctas reveal">
           <a class="btn btn-light" href="https://facesconsent.com/bookings/therealbeautyco" target="_blank" rel="noopener">Book now</a>
-          <a class="btn btn-light" href="services.html">View services</a>
+          <a class="btn btn-light" href="#treatments">Explore treatments</a>
         </div>
       </div>
-      <img class="hero-logo reveal" src="assets/logo.jpg" alt="The Brow Fairy logo: a hand-drawn brow above the words Brow Design and Make Up Artistry">
+    </div>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </section>
+
+  <!-- Introduction -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 56px; max-width: 62ch;">
+        <p class="eyebrow" style="text-align: center;">A softer way to do brows</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">The Brow Fairy is Nicola &mdash; and she does things differently</h2>
+        <p style="margin-top: 20px;">No harsh blocks, no one-size-fits-all stencils. Every appointment starts with an honest look at what will genuinely suit you, then careful, precise work to get you there. It is why clients come back &mdash; and why they send their friends.</p>
+      </div>
+      <div class="quote reveal" style="max-width: 56ch; margin: 0 auto;">
+        <blockquote style="font-size: clamp(1.3rem, 2.4vw, 1.7rem);">&ldquo;Absolutely outstanding. The passion and knowledge Nic has is unrivalled. She is truly safe and expert hands.&rdquo;</blockquote>
+        <cite>Lucy S. &middot; Verified review</cite>
+      </div>
     </div>
   </section>
 
-  <section id="services">
+  <!-- Featured Treatments -->
+  <section id="treatments" style="background: var(--linen);">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Services</h2>
-        <p>Every appointment begins with a consultation, so the result suits your features, your routine and how much upkeep you actually want.</p>
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 56px;">
+        <p class="eyebrow" style="text-align: center;">What we offer</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Featured treatments</h2>
       </div>
-      <div class="services-grid">
-        <!-- TODO: replace the photo slot below with a real brow photo (portrait, about 900x1200) -->
-        <a class="tile tile-feature reveal" href="services.html" style="text-decoration: none; color: inherit;">
-          <div class="photo-slot">Add a photo of your brow work here<br>(portrait, around 900 x 1200)</div>
-          <div class="tile-copy">
+      <div class="treatment-cards">
+        <a class="treatment-card reveal" href="services.html#pricing">
+          <img src="assets/photos/client-portrait.jpg" alt="Close-up portrait showing beautifully shaped, natural eyebrows" loading="lazy">
+          <div class="treatment-card-body">
+            <p class="eyebrow">From &pound;30</p>
             <h3>Brow design</h3>
-            <p>Mapping, shaping and tinting in one appointment. A shape built around your bone structure, not a template.</p>
+            <span>Discover more &rarr;</span>
           </div>
         </a>
-        <a class="tile tile-champagne reveal" href="services.html" style="text-decoration: none; color: inherit;">
-          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 23c0-6 2-10 6-13M14 23c0-6 2-10 6-13M20 23c0-6 2-10 6-13"/></svg></div>
-          <h3>Brow lamination</h3>
-          <p>A fuller, softly brushed-up set that holds its shape for weeks, finished with a nourishing treatment.</p>
+        <a class="treatment-card reveal" href="services.html#pricing">
+          <img src="assets/photos/lash-treatment-1.jpg" alt="Beautician applying a lash treatment in a calm studio setting" loading="lazy">
+          <div class="treatment-card-body">
+            <p class="eyebrow">From &pound;35</p>
+            <h3>Lash lift &amp; tint</h3>
+            <span>Discover more &rarr;</span>
+          </div>
         </a>
-        <a class="tile tile-forest reveal" href="services.html" style="text-decoration: none; color: inherit;">
-          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 27l6-6"/><path d="M11 21c-1-7 6-14 16-15-1 10-8 17-15 16z"/></svg></div>
-          <h3>Makeup artistry</h3>
-          <p>Occasion and bridal makeup that photographs beautifully and still looks like you. Trials available before the big day.</p>
+        <a class="treatment-card reveal" href="services.html#pricing">
+          <!-- TODO: replace with a real micropigmentation result photo -->
+          <img src="assets/photos/lash-treatment-3.jpg" alt="Precision beauty treatment being carried out in a studio" loading="lazy">
+          <div class="treatment-card-body">
+            <p class="eyebrow">From &pound;75</p>
+            <h3>Micropigmentation</h3>
+            <span>Discover more &rarr;</span>
+          </div>
+        </a>
+        <a class="treatment-card reveal" href="services.html#pricing">
+          <img src="assets/photos/makeup-artist.jpg" alt="Makeup artist applying makeup to a client in a bright studio" loading="lazy">
+          <div class="treatment-card-body">
+            <p class="eyebrow">From &pound;40</p>
+            <h3>Event makeup</h3>
+            <span>Discover more &rarr;</span>
+          </div>
+        </a>
+        <a class="treatment-card reveal" href="services.html#pricing">
+          <img src="assets/photos/lash-treatment-2.jpg" alt="Lash extension application, close-up detail shot" loading="lazy">
+          <div class="treatment-card-body">
+            <p class="eyebrow">From &pound;40</p>
+            <h3>Brow lamination</h3>
+            <span>Discover more &rarr;</span>
+          </div>
+        </a>
+        <a class="treatment-card reveal" href="services.html#pricing">
+          <img src="assets/photos/studio-interior.jpg" alt="Elegant, minimal treatment studio interior" loading="lazy">
+          <div class="treatment-card-body">
+            <p class="eyebrow">From &pound;75</p>
+            <h3>Bridal makeup</h3>
+            <span>Discover more &rarr;</span>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Why Choose Us -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 48px;">
+        <p class="eyebrow" style="text-align: center;">Why choose us</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Trust, built one appointment at a time</h2>
+      </div>
+      <div class="trust-strip reveal" style="margin-bottom: 72px;">
+        <div class="trust-item">
+          <div class="display-heading">5&#9733;</div>
+          <p>Client rated</p>
+        </div>
+        <div class="trust-item">
+          <div class="display-heading">2026</div>
+          <p>HBA Awards finalist</p>
+        </div>
+        <div class="trust-item">
+          <div class="display-heading">1:1</div>
+          <p>Unhurried appointments</p>
+        </div>
+        <div class="trust-item">
+          <div class="display-heading">100%</div>
+          <p>Consultation led</p>
+        </div>
+      </div>
+      <div class="feature-list">
+        <div class="feature-item reveal">
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 20c4-8 16-12 24-6"/><path d="M7 19l3-5M11 16.5l3-5M15.5 14.5l2.5-4.5M20 13l2-4"/></svg></div>
+          <h3>Bespoke, not templated</h3>
+          <p>Every shape is mapped to your bone structure and features, never a stencil pulled off a shelf.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10"/><path d="M16 10v6l4 3"/></svg></div>
+          <h3>Time to talk it through</h3>
+          <p>Every appointment opens with an honest consultation, so nothing is rushed and nothing is a surprise.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 26c-1.8-3.4-9-5.4-9-11 0-3 2.2-5 4.8-5 1.7 0 3.2 1 4.2 2.5 1-1.5 2.5-2.5 4.2-2.5 2.6 0 4.8 2 4.8 5 0 5.6-7.2 7.6-9 11z"/></svg></div>
+          <h3>Aftercare that actually helps</h3>
+          <p>Clear, considered guidance after every treatment &mdash; not an afterthought, a proper part of the service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Your Artist -->
+  <section style="background: var(--linen);">
+    <div class="wrap artist-split">
+      <!-- TODO: replace with a professional portrait of Nicola (portrait, about 900x1125) -->
+      <div class="artist-photo photo-slot reveal">Add a portrait of Nicola here<br>(portrait, around 900 x 1125)</div>
+      <div class="reveal">
+        <p class="eyebrow">Meet your artist</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Nicola Reilly</h2>
+        <p style="margin-top: 18px;">The Brow Fairy is a one-woman studio built on a simple idea: brows and makeup should flatter the person wearing them, not follow a trend. Nicola trained across brow design, lamination, lash treatments and micropigmentation, and keeps building on that foundation &mdash; most recently as a 2026 UK Hair &amp; Beauty Awards finalist for Best for Brows, representing Suffolk.</p>
+        <ul class="artist-credentials">
+          <li>Qualified in brow design, lamination, lash treatments &amp; micropigmentation</li>
+          <li>2026 UK Hair &amp; Beauty Awards finalist, Best for Brows</li>
+          <li>Patch-test led, safety-first approach to every treatment</li>
+          <li>Unhurried, one-to-one appointments &mdash; never rushed, never templated</li>
+        </ul>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a class="btn btn-dark" href="about.html">Read her full story</a>
+          <a class="btn btn-dark" href="https://facesconsent.com/bookings/therealbeautyco" target="_blank" rel="noopener">Book a consult</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Journey -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 64px;">
+        <p class="eyebrow" style="text-align: center;">How it works</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Your treatment journey</h2>
+        <p style="margin-top: 16px;">First time here? This is exactly what to expect, start to finish.</p>
+      </div>
+      <div class="journey reveal">
+        <div class="journey-step">
+          <div class="journey-number">1</div>
+          <h3>Consultation</h3>
+          <p>A relaxed, honest conversation about what you want and what will genuinely suit you.</p>
+        </div>
+        <div class="journey-step">
+          <div class="journey-number">2</div>
+          <h3>Treatment</h3>
+          <p>Careful, unhurried work &mdash; mapped, shaped and finished with real attention to detail.</p>
+        </div>
+        <div class="journey-step">
+          <div class="journey-number">3</div>
+          <h3>Results</h3>
+          <p>A natural-looking result you can maintain yourself, not one that collapses in a week.</p>
+        </div>
+        <div class="journey-step">
+          <div class="journey-number">4</div>
+          <h3>Aftercare</h3>
+          <p>Clear guidance to help it last, plus an open door if you have any questions after.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio teaser -->
+  <section style="background: var(--linen);">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 48px;">
+        <p class="eyebrow" style="text-align: center;">Real work</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">From the portfolio</h2>
+      </div>
+      <div class="gallery-grid reveal" style="margin-bottom: 40px;">
+        <div class="gallery-item" style="cursor: default;">
+          <img src="assets/photos/client-portrait.jpg" alt="Natural, well-shaped brows" loading="lazy">
+        </div>
+        <div class="gallery-item" style="cursor: default;">
+          <img src="assets/photos/lash-treatment-2.jpg" alt="Lash treatment detail" loading="lazy">
+        </div>
+        <div class="gallery-item" style="cursor: default;">
+          <img src="assets/photos/makeup-artist.jpg" alt="Makeup artistry session" loading="lazy">
+        </div>
+      </div>
+      <p style="text-align: center;"><a class="btn btn-dark" href="portfolio.html">View the full portfolio</a></p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
   <section class="reviews-band" aria-label="Client reviews" style="padding-left: 0; padding-right: 0;">
     <div class="wrap reveal">
-      <h2>Kind words from clients</h2>
+      <p class="eyebrow" style="text-align: center;">Kind words</p>
+      <h2 style="text-align: center;">What clients say</h2>
     </div>
     <!-- Excerpts from real client reviews (Facebook and verified bookings);
          source screenshots in Imagery/Testimonials -->
@@ -186,6 +365,102 @@
     </div>
   </section>
 
+  <!-- Gift Vouchers -->
+  <section>
+    <div class="wrap">
+      <div class="voucher-panel reveal">
+        <div>
+          <p class="eyebrow on-dark">Gift vouchers</p>
+          <h2>Give the gift of great brows</h2>
+          <p>A Brow Fairy voucher makes a considered gift for birthdays, bridal parties or just because. Available for any treatment or amount &mdash; get in touch and one will be arranged for you.</p>
+          <a class="btn btn-light" href="contact.html" style="margin-top: 24px; display: inline-block;">Enquire about a voucher</a>
+        </div>
+        <div class="voucher-figure">
+          <span class="script">The Brow Fairy</span>
+          <p>Gift voucher</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section style="background: var(--linen);">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 40px;">
+        <p class="eyebrow" style="text-align: center;">Follow along</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">@thebrowfairy</h2>
+      </div>
+      <div class="instagram-grid reveal" style="margin-bottom: 36px;">
+        <a href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener"><img src="assets/photos/client-portrait.jpg" alt="" loading="lazy"></a>
+        <a href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener"><img src="assets/photos/lash-treatment-1.jpg" alt="" loading="lazy"></a>
+        <a href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener"><img src="assets/photos/lash-treatment-2.jpg" alt="" loading="lazy"></a>
+        <a href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener"><img src="assets/photos/makeup-artist.jpg" alt="" loading="lazy"></a>
+        <a href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener"><img src="assets/photos/studio-interior.jpg" alt="" loading="lazy"></a>
+        <a href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener"><img src="assets/photos/studio-shelves.jpg" alt="" loading="lazy"></a>
+      </div>
+      <p style="text-align: center;"><a class="btn btn-dark" href="https://instagram.com/thebrowfairy" target="_blank" rel="noopener">Follow on Instagram</a></p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 48px;">
+        <p class="eyebrow" style="text-align: center;">Good to know</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Frequently asked questions</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>What happens at a first appointment?<span class="news-toggle" aria-hidden="true"></span></summary>
+          <p>Every visit starts with a short, honest consultation, so the result suits your features and your routine. There is no obligation and no pressure &mdash; it is simply the best way to check we are a good fit.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a patch test first?<span class="news-toggle" aria-hidden="true"></span></summary>
+          <p>Yes, a patch test is required at least 48 hours before your first tint, lamination or micropigmentation appointment. It is free and takes about 15 minutes &mdash; see the <a href="services.html#pricing" style="color: var(--forest);">pricing page</a> for details.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I book, and how quickly will I hear back?<span class="news-toggle" aria-hidden="true"></span></summary>
+          <p>Book directly through the online booking system, or send an enquiry via the <a href="contact.html" style="color: var(--forest);">contact page</a> with the service you are after and your preferred days. You will typically hear back within a day or two.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is your cancellation policy?<span class="news-toggle" aria-hidden="true"></span></summary>
+          <p>Please give as much notice as you can if you need to rearrange. Full details on deposits, late cancellations and payments are on the <a href="policies.html" style="color: var(--forest);">policies page</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I look after my results afterwards?<span class="news-toggle" aria-hidden="true"></span></summary>
+          <p>Every treatment comes with clear aftercare guidance on the day. The <a href="aftercare.html" style="color: var(--forest);">aftercare hub</a> also has guides for each treatment, healing timelines and general do&rsquo;s and don&rsquo;ts.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section style="background: var(--linen);">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 48px;">
+        <p class="eyebrow" style="text-align: center;">Find the studio</p>
+        <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Visit us in Lowestoft</h2>
+      </div>
+      <div class="location-grid reveal">
+        <dl class="location-details">
+          <dt>Address</dt>
+          <dd>40 Fallowfields, Lowestoft, Suffolk, NR32 4XN</dd>
+          <dt>Parking</dt>
+          <dd>On-street parking is available nearby; full directions are shared when you book.</dd>
+          <dt>Hours</dt>
+          <dd>By appointment</dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:reilly-t@hotmail.com" style="color: var(--forest);">reilly-t@hotmail.com</a></dd>
+          <dt>Instagram</dt>
+          <dd><a href="https://instagram.com/thebrowfairy" rel="noopener" style="color: var(--forest);">@thebrowfairy</a></dd>
+        </dl>
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps?q=40+Fallowfields,+Lowestoft,+Suffolk,+NR32+4XN&output=embed" loading="lazy" title="Map showing The Brow Fairy studio location" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="booking">
     <div class="wrap reveal">
       <div class="script-divider"><span class="script">real brow science. no fairy tales.</span></div>
@@ -205,11 +480,12 @@
       <a href="about.html">About me</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="aftercare.html">Aftercare</a>
       <a href="news.html">Latest news</a>
       <a href="contact.html">Contact</a>
       <a href="policies.html">Policies</a>
     </nav>
-    Brow Design &amp; Make Up Artistry &copy; 2026
+    40 Fallowfields, Lowestoft, Suffolk, NR32 4XN &middot; Brow Design &amp; Make Up Artistry &copy; 2026
   </div>
 </footer>
 

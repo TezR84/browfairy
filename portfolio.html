@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio | The Brow Fairy</title>
-<meta name="description" content="A gallery of brow design, lamination and makeup artistry by The Brow Fairy.">
+<meta name="description" content="A gallery of brow design, lash treatments, micropigmentation and makeup artistry by The Brow Fairy.">
 <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
       <a href="about.html">About me</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="aftercare.html">Aftercare</a>
       <a href="news.html">Latest news</a>
       <a href="contact.html">Contact</a>
       <a class="btn btn-light btn-nav" href="https://facesconsent.com/bookings/therealbeautyco" target="_blank" rel="noopener">Book now</a>
@@ -34,27 +35,61 @@
     <div class="wrap">
       <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="10" width="24" height="16" rx="2"/><path d="M11 10l2-3h6l2 3"/><circle cx="16" cy="18" r="5"/></svg></div>
       <h1>Portfolio</h1>
-      <p>Real brows, real faces. No filters needed.</p>
+      <p>Real brows, real faces. No filters needed &mdash; filter by treatment instead.</p>
     </div>
   </div>
 
+  <!--
+    TODO: as real client work photos become available (with consent), replace the
+    images below and give each one an accurate data-category (space-separated if
+    it fits more than one: "brows", "lashes", "micropigmentation", "makeup").
+    The filter buttons and lightbox work automatically with however many items
+    are here - no other changes needed to add more.
+  -->
   <section>
     <div class="wrap">
-      <!--
-        TODO: replace each slot below with a real photo.
-        Swap each div for: <img src="assets/portfolio-1.jpg" alt="describe the work" style="border-radius: 18px; width: 100%; height: 100%; object-fit: cover;">
-        Keep a mix of portrait and square crops for the varied grid.
-      -->
-      <div class="portfolio-grid">
-        <div class="photo-slot slot-tall reveal">Brow design<br>before and after</div>
-        <div class="photo-slot slot-tall reveal">Lamination result</div>
-        <div class="photo-slot slot-tall reveal">Bridal makeup look</div>
-        <div class="photo-slot slot-square reveal">Close-up brow detail</div>
-        <div class="photo-slot slot-square reveal">Event makeup look</div>
-        <div class="photo-slot slot-square reveal">Studio moment</div>
+      <div class="gallery-filters reveal">
+        <button class="gallery-filter" data-filter="all" aria-pressed="true">All</button>
+        <button class="gallery-filter" data-filter="brows" aria-pressed="false">Brows</button>
+        <button class="gallery-filter" data-filter="lashes" aria-pressed="false">Lashes</button>
+        <button class="gallery-filter" data-filter="micropigmentation" aria-pressed="false">Micropigmentation</button>
+        <button class="gallery-filter" data-filter="makeup" aria-pressed="false">Makeup</button>
+      </div>
+      <div class="gallery-grid reveal">
+        <button class="gallery-item" data-category="brows micropigmentation" data-full="assets/photos/client-portrait.jpg">
+          <img src="assets/photos/client-portrait.jpg" alt="Natural, well-shaped eyebrows, close-up portrait" loading="lazy">
+          <span class="gallery-item-label">Brow design</span>
+        </button>
+        <button class="gallery-item" data-category="lashes" data-full="assets/photos/lash-treatment-2.jpg">
+          <img src="assets/photos/lash-treatment-2.jpg" alt="Lash extension application, close-up detail" loading="lazy">
+          <span class="gallery-item-label">Lash treatment</span>
+        </button>
+        <button class="gallery-item" data-category="makeup" data-full="assets/photos/makeup-artist.jpg">
+          <img src="assets/photos/makeup-artist.jpg" alt="Makeup artistry session in a bright studio" loading="lazy">
+          <span class="gallery-item-label">Makeup artistry</span>
+        </button>
+        <button class="gallery-item" data-category="lashes" data-full="assets/photos/lash-treatment-1.jpg">
+          <img src="assets/photos/lash-treatment-1.jpg" alt="Beautician applying a lash treatment" loading="lazy">
+          <span class="gallery-item-label">Lash treatment</span>
+        </button>
+        <button class="gallery-item" data-category="lashes" data-full="assets/photos/lash-treatment-3.jpg">
+          <img src="assets/photos/lash-treatment-3.jpg" alt="Precision lash work in progress" loading="lazy">
+          <span class="gallery-item-label">Lash treatment</span>
+        </button>
+        <button class="gallery-item" data-category="makeup" data-full="assets/photos/studio-interior.jpg">
+          <img src="assets/photos/studio-interior.jpg" alt="Elegant, minimal studio interior" loading="lazy">
+          <span class="gallery-item-label">The studio</span>
+        </button>
       </div>
     </div>
   </section>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&larr;</button>
+    <img src="" alt="">
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">&rarr;</button>
+  </div>
 
   <section class="booking">
     <div class="wrap reveal">
@@ -75,11 +110,12 @@
       <a href="about.html">About me</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="aftercare.html">Aftercare</a>
       <a href="news.html">Latest news</a>
       <a href="contact.html">Contact</a>
       <a href="policies.html">Policies</a>
     </nav>
-    Brow Design &amp; Make Up Artistry &copy; 2026
+    40 Fallowfields, Lowestoft, Suffolk, NR32 4XN &middot; Brow Design &amp; Make Up Artistry &copy; 2026
   </div>
 </footer>
 
