@@ -25,16 +25,6 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  // Sticky nav: transparent over the top of the page, solid once scrolled
-  var header = document.querySelector("header");
-  if (header) {
-    var setHeaderState = function () {
-      header.classList.toggle("at-top", window.scrollY < 60);
-    };
-    setHeaderState();
-    window.addEventListener("scroll", setHeaderState, { passive: true });
-  }
-
   // Filterable gallery
   var filters = document.querySelectorAll(".gallery-filter");
   var galleryItems = document.querySelectorAll(".gallery-item");

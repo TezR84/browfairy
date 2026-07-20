@@ -843,15 +843,28 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
   letter-spacing: 0.005em;
 }
 
-/* ---------- Sticky nav: transparent over hero, solid once scrolled ---------- */
-header.at-top {
-  background: transparent;
-  border-bottom-color: transparent;
-  backdrop-filter: none;
+/* ---------- Nav logo & social links ---------- */
+.logo-link { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.logo-link img {
+  width: 148px;
+  height: 56px;
+  object-fit: cover;
+  object-position: center 58%;
+  display: block;
 }
-header { transition: background-color 0.35s ease, border-color 0.35s ease; }
-.logo-link { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-link img { height: 34px; width: auto; display: block; }
+.nav-social { display: flex; align-items: center; gap: 16px; }
+.nav-social a { color: #FFFBF7; display: inline-flex; }
+.nav-social a:hover { color: var(--champagne); }
+.nav-social svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.nav-social svg .dot { fill: currentColor; stroke: none; }
 
 /* ---------- Full-bleed premium hero ---------- */
 .hero-full {
