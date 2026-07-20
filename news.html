@@ -43,29 +43,48 @@
     <div class="wrap">
       <div class="news-list">
         <!--
-          To add a new post, copy an <article> block below, put the newest post at the top,
-          and update the date, heading and text.
+          To add a new post, copy a <details class="news-card"> block below, put the
+          newest post at the top, and update the date, heading and text. The <summary>
+          is the compact, always-visible row; everything in .news-card-body only shows
+          once a reader clicks (or taps) to expand it.
         -->
-        <article class="news-card reveal">
-          <div class="news-card-photo">
-            <img src="assets/nic-2026-finalist.jpg" alt="Nicola holding her framed UK Hair &amp; Beauty Awards 2026 Finalist certificate for The Brow Fairy MUA">
+        <details class="news-card reveal">
+          <summary>
+            <div class="news-summary-photo">
+              <img src="assets/nic-2026-finalist.jpg" alt="Nicola holding her framed UK Hair &amp; Beauty Awards 2026 Finalist certificate for The Brow Fairy MUA">
+            </div>
+            <div class="news-summary-text">
+              <time datetime="2026-07-20">20 July 2026</time>
+              <h2>Shortlisted as a 2026 finalist</h2>
+            </div>
+            <span class="news-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="news-card-body">
+            <div class="news-card-photo">
+              <img src="assets/nic-2026-finalist.jpg" alt="Nicola holding her framed UK Hair &amp; Beauty Awards 2026 Finalist certificate for The Brow Fairy MUA">
+            </div>
+            <p>The Brow Fairy MUA has been named a finalist in the Best for Brows category at the UK Hair &amp; Beauty Awards 2026, representing Suffolk on a national stage.</p>
+            <p>When this journey started, the goal was simple: help women feel more confident through great brows. Seeing that recognised nationally, and now seeing The Brow Fairy MUA featured in HBA Times, still hasn&rsquo;t quite sunk in.</p>
+            <p>Thank you to every client who has trusted, supported and recommended along the way &mdash; your support means more than you&rsquo;ll ever know.</p>
+            <div class="news-badges">
+              <span class="news-badge">UK Hair &amp; Beauty Awards 2026 Finalist</span>
+              <span class="news-badge">Best for Brows</span>
+              <span class="news-badge">Representing Suffolk</span>
+            </div>
           </div>
-          <time datetime="2026-07-20">20 July 2026</time>
-          <h2>Shortlisted as a 2026 finalist</h2>
-          <p>The Brow Fairy MUA has been named a finalist in the Best for Brows category at the UK Hair &amp; Beauty Awards 2026, representing Suffolk on a national stage.</p>
-          <p>When this journey started, the goal was simple: help women feel more confident through great brows. Seeing that recognised nationally, and now seeing The Brow Fairy MUA featured in HBA Times, still hasn&rsquo;t quite sunk in.</p>
-          <p>Thank you to every client who has trusted, supported and recommended along the way &mdash; your support means more than you&rsquo;ll ever know.</p>
-          <div class="news-badges">
-            <span class="news-badge">UK Hair &amp; Beauty Awards 2026 Finalist</span>
-            <span class="news-badge">Best for Brows</span>
-            <span class="news-badge">Representing Suffolk</span>
+        </details>
+        <details class="news-card reveal">
+          <summary>
+            <div class="news-summary-text">
+              <time datetime="2026-07-17">17 July 2026</time>
+              <h2>The Brow Fairy is open for bookings</h2>
+            </div>
+            <span class="news-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="news-card-body">
+            <p>Welcome to the new home of The Brow Fairy. Brow design, lamination and makeup artistry appointments are now open. Have a look at the service menu, then get in touch to secure a spot.</p>
           </div>
-        </article>
-        <article class="news-card reveal">
-          <time datetime="2026-07-17">17 July 2026</time>
-          <h2>The Brow Fairy is open for bookings</h2>
-          <p>Welcome to the new home of The Brow Fairy. Brow design, lamination and makeup artistry appointments are now open. Have a look at the service menu, then get in touch to secure a spot.</p>
-        </article>
+        </details>
       </div>
       <p class="menu-note reveal" style="margin-top: 28px;">For day-to-day work and last-minute availability, follow along on <a href="https://instagram.com/thebrowfairy" rel="noopener" style="color: var(--forest);">Instagram</a>.</p>
     </div>

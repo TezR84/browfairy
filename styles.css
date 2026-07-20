@@ -338,25 +338,72 @@ section { padding: 96px 0; }
 .slot-square { aspect-ratio: 1 / 1; }
 .slot-wide { aspect-ratio: 4 / 3; }
 
-/* ---------- News ---------- */
-.news-list { display: grid; gap: 28px; max-width: 760px; }
+/* ---------- News ----------
+   Markup pattern: each post is a <details class="news-card">. The
+   <summary> is the compact, always-visible rectangle (thumbnail + date
+   + title); clicking it expands <div class="news-card-body"> with the
+   full text, photo and badges. Native <details> gives click + keyboard
+   + screen-reader support with no JS. */
+.news-list { display: grid; gap: 16px; max-width: 760px; }
 .news-card {
   background: var(--linen);
   border-radius: var(--radius);
-  padding: 40px;
+  overflow: hidden;
 }
-.news-card time {
+.news-card summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+.news-card summary::-webkit-details-marker { display: none; }
+.news-card summary::marker { content: ""; }
+.news-summary-photo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: calc(var(--radius) - 10px);
+  overflow: hidden;
+}
+.news-summary-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 22%; }
+.news-summary-text { flex: 1; min-width: 0; }
+.news-summary-text time {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   color: color-mix(in srgb, var(--ink) 65%, var(--sage));
 }
-.news-card h2 { font-size: 1.8rem; margin: 10px 0 12px; }
-.news-card p { max-width: 60ch; }
+.news-summary-text h2 {
+  font-size: 1.25rem;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.news-toggle {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid color-mix(in srgb, var(--forest) 45%, transparent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.news-toggle::before { content: "+"; }
+.news-card[open] .news-toggle::before { content: "\2212"; }
+.news-card-body { padding: 0 24px 32px; }
+.news-card-body p { max-width: 60ch; margin-bottom: 12px; }
+.news-card-body p:last-of-type { margin-bottom: 0; }
 .news-card-photo {
-  margin: -40px -40px 28px;
-  border-radius: var(--radius) var(--radius) 0 0;
+  border-radius: calc(var(--radius) - 6px);
   overflow: hidden;
   aspect-ratio: 16 / 11;
+  margin-bottom: 20px;
 }
 .news-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 22%; }
 .news-badges { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 4px; }
@@ -659,6 +706,7 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
   .menu-group { padding: 32px 24px; }
   .menu-row { flex-direction: column; gap: 4px; }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
-  .news-card { padding: 28px 24px; }
-  .news-card-photo { margin: -28px -24px 22px; }
+  .news-card summary { padding: 14px 18px; gap: 14px; }
+  .news-card-body { padding: 0 18px 26px; }
+  .news-summary-photo { width: 52px; height: 52px; }
 }
