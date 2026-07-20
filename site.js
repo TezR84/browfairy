@@ -9,9 +9,11 @@
     });
   }
 
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // Scroll reveal (also covers the desaturate-to-colour image reveal)
   var els = document.querySelectorAll(".reveal, .img-reveal");
-  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (!("IntersectionObserver" in window) || reducedMotion) {
     els.forEach(function (el) { el.classList.add("in"); });
   } else {
     var io = new IntersectionObserver(function (entries) {
@@ -23,6 +25,44 @@
       });
     }, { threshold: 0.2 });
     els.forEach(function (el) { io.observe(el); });
+  }
+
+  // Animated stat numbers (trust strip): counts up from 0 to the final
+  // value once scrolled into view. The element's own text is the source
+  // of truth for the final display (e.g. "1:1", "100%") - every matching
+  // occurrence of the target number within it is swapped for the
+  // in-progress count each frame, then reset to the exact original text.
+  var counters = document.querySelectorAll(".count-up");
+  if (counters.length && "IntersectionObserver" in window && !reducedMotion) {
+    var animateCount = function (el) {
+      var finalText = el.textContent;
+      var target = parseInt(el.getAttribute("data-count-to"), 10);
+      if (isNaN(target)) return;
+      var duration = 1100;
+      var start = null;
+      var step = function (timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(target * eased);
+        el.textContent = finalText.split(String(target)).join(String(current));
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = finalText;
+        }
+      };
+      requestAnimationFrame(step);
+    };
+    var countIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { countIo.observe(el); });
   }
 
   // Filterable gallery
