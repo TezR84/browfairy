@@ -298,7 +298,16 @@ section { padding: 96px 0; }
 }
 .menu-group-linen { background: var(--linen); }
 .menu-group-champagne { background: var(--champagne); }
+.menu-group-forest { background: var(--forest); color: var(--ivory); }
+.menu-group-forest .menu-row .menu-desc { color: color-mix(in srgb, var(--ivory) 82%, var(--forest)); }
+.menu-group-forest .menu-row .menu-price { color: var(--champagne); }
+.menu-group-forest .menu-group-note { color: color-mix(in srgb, var(--ivory) 78%, var(--forest)); }
 .menu-group h2 { font-size: 1.9rem; margin-bottom: 28px; }
+.menu-group-note {
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--ink) 65%, var(--sage));
+  margin-top: 26px;
+}
 .menu-rows {
   display: grid;
   gap: 26px;
@@ -505,7 +514,7 @@ section { padding: 96px 0; }
   color: color-mix(in srgb, var(--ink) 70%, var(--sage));
 }
 @media (prefers-reduced-motion: no-preference) {
-  .reviews-track { animation: reviews-scroll 45s linear infinite; }
+  .reviews-track { animation: reviews-scroll 68s linear infinite; }
   .reviews-track:hover { animation-play-state: paused; }
   /* Track holds two identical groups; sliding half the total width
      minus half the gap lands exactly on the second group for a seamless loop */
@@ -566,7 +575,8 @@ section { padding: 96px 0; }
 .menu-group-champagne,
 .contact-panel,
 .tile-champagne { border: 1px solid color-mix(in srgb, var(--forest) 18%, transparent); }
-.tile-forest { border: 1px solid color-mix(in srgb, var(--champagne) 45%, transparent); }
+.tile-forest,
+.menu-group-forest { border: 1px solid color-mix(in srgb, var(--champagne) 45%, transparent); }
 
 /* ---------- Script accents & line icons (from brand social graphics) ---------- */
 .script { font-family: "Allura", cursive; font-weight: 400; }
