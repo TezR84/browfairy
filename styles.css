@@ -52,6 +52,10 @@ header {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid color-mix(in srgb, var(--ivory) 18%, transparent);
 }
+/* Anchor-jump targets (e.g. the aftercare guide cards, #pricing, #treatments)
+   land with their heading tucked under the sticky 68px header without this -
+   scroll-margin-top pushes the scroll position down so the title clears it. */
+:target { scroll-margin-top: 90px; }
 .nav {
   height: 68px;
   display: flex;
