@@ -211,7 +211,6 @@ section { padding: 96px 0; }
   grid-template-rows: auto auto;
   gap: 20px;
 }
-.services-grid-2col { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
 .tile {
   border-radius: var(--radius);
   padding: 40px;
@@ -271,6 +270,96 @@ section { padding: 96px 0; }
 }
 .split-grid h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); margin-bottom: 20px; }
 .split-grid p { margin-bottom: 16px; max-width: 58ch; }
+
+/* ---------- Service tiles (services page overview) ----------
+   Each tile is an <article>: photo, h3, 1-2 sentence description, then
+   a price/booking footer. The photo sits desaturated by default and
+   returns to full colour on hover or keyboard focus (:focus-within,
+   since the tile itself isn't interactive - only the "Book a consult"
+   link inside it is), as a quiet nod to the brow transformation the
+   service delivers. */
+.service-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+.service-tile {
+  background: var(--ivory);
+  border: 1px solid var(--stone);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+.service-tile:hover,
+.service-tile:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--sage);
+  background: var(--champagne);
+}
+.service-tile-photo {
+  aspect-ratio: 4 / 3;
+  filter: grayscale(65%) saturate(65%);
+  transition: filter 0.4s ease;
+}
+.service-tile:hover .service-tile-photo,
+.service-tile:focus-within .service-tile-photo {
+  filter: none;
+}
+.service-tile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.service-tile-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-tile-body h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.service-tile-body p {
+  font-size: 0.98rem;
+  color: color-mix(in srgb, var(--ink) 75%, var(--sage));
+  margin-bottom: 24px;
+  flex: 1;
+}
+.service-tile-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--stone);
+}
+.service-tile-price {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  white-space: nowrap;
+}
+.service-tile-link {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+.service-tile-link:hover { color: var(--sage-deep); }
+.service-tile-link:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-tile,
+  .service-tile-photo,
+  .service-tile-link {
+    transition: none;
+  }
+  .service-tile:hover,
+  .service-tile:focus-within {
+    transform: none;
+  }
+}
 
 /* ---------- Quote ---------- */
 .quote { text-align: center; }
@@ -715,6 +804,8 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
   .tile-feature { grid-row: auto; min-height: 420px; }
   section { padding: 64px 0; }
   .split-grid, .split-grid.flip { gap: 32px; }
+  .service-tiles { grid-template-columns: 1fr; gap: 24px; }
+  .service-tile-body { padding: 22px; }
   .page-band { padding: 56px 0; }
   .menu-group { padding: 32px 24px; }
   .menu-rows { grid-template-columns: 1fr; gap: 18px; }
