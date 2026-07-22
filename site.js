@@ -81,6 +81,12 @@
         });
       });
     });
+    // Deep links from other pages (e.g. "portfolio.html#filter-brows") land
+    // pre-filtered to the relevant category, not just scrolled to the grid.
+    var hashFilter = document.getElementById(window.location.hash.slice(1));
+    if (hashFilter && hashFilter.classList.contains("gallery-filter")) {
+      hashFilter.click();
+    }
   }
 
   // Lightbox

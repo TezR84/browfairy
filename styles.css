@@ -83,7 +83,10 @@ header {
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
-.nav-links a:not(.btn):hover { color: var(--champagne); }
+.nav-links a:not(.btn):hover {
+  color: var(--champagne);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
 .nav-links a.active {
   text-decoration: underline;
   text-underline-offset: 6px;
@@ -110,22 +113,27 @@ header {
 .btn {
   display: inline-block;
   padding: 13px 32px;
-  border-radius: 0;
+  border-radius: 8px;
   background: transparent;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   white-space: nowrap;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .btn:active { transform: translateY(1px) scale(0.98); }
-/* White outline for buttons on sage / forest sections */
+/* White outline for buttons on sage / forest sections. Hover glow echoes the
+   champagne glow used on the logo and script lettering elsewhere on the site. */
 .btn-light {
   color: #FFFBF7;
   border: 1px solid #FFFBF7;
 }
-.btn-light:hover { background: color-mix(in srgb, var(--ivory) 14%, transparent); }
+.btn-light:hover {
+  background: color-mix(in srgb, var(--ivory) 14%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
+.btn-light:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; }
 /* Forest outline for buttons on ivory / linen sections, where white would disappear */
 .btn-dark {
   color: var(--forest);
@@ -135,6 +143,7 @@ header {
   background: var(--forest);
   color: var(--ivory);
 }
+.btn-dark:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 .btn-nav { padding: 10px 26px; }
 
 /* ---------- Page band (interior page headers) ---------- */
@@ -353,6 +362,23 @@ section { padding: 96px 0; }
   outline: 2px solid var(--forest);
   outline-offset: 3px;
 }
+/* Secondary actions (View prices / View portfolio) - deliberately quieter than
+   the primary "Book a consultation" link above, so the hierarchy stays clear. */
+.service-tile-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.service-tile-actions a {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--ink) 65%, var(--sage));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.service-tile-actions a:hover { color: var(--forest); }
+.service-tile-actions a:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   .service-tile,
   .service-tile-photo,
@@ -431,6 +457,8 @@ section { padding: 96px 0; }
   color: color-mix(in srgb, var(--ink) 65%, var(--sage));
   margin-top: 8px;
 }
+.menu-group-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.menu-group-note a:hover { opacity: 0.8; }
 
 /* ---------- Portfolio ---------- */
 .portfolio-grid {
@@ -646,9 +674,14 @@ section { padding: 96px 0; }
 }
 
 /* ---------- Info-graphic accents (from the Hot Weather Brow Care art) ---------- */
-/* Champagne glow on script lettering, echoing the graphic's glowing gold linework */
-.hero h1 em,
+/* Champagne glow on script lettering and select dark-background headings,
+   echoing the graphic's glowing gold linework. Restricted to script accents,
+   the shared booking-strip heading and the oval badge - never body copy, and
+   never on light backgrounds, where the pale champagne shadow just looks muddy. */
+.hero-full h1 em,
 .booking .script,
+.booking h2,
+.voucher-figure .script,
 .oval-badge {
   text-shadow: 0 0 12px color-mix(in srgb, var(--champagne) 60%, transparent),
                0 0 32px color-mix(in srgb, var(--champagne) 35%, transparent);
@@ -743,7 +776,23 @@ footer {
   color: color-mix(in srgb, var(--ink) 65%, var(--sage));
   border-top: 1px solid var(--stone);
 }
-footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-block; margin-bottom: 10px; }
+.footer-logo { display: inline-block; margin-bottom: 10px; }
+.footer-logo img { height: 40px; width: auto; display: block; }
+.footer-logo:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+.footer-social { display: flex; justify-content: center; gap: 16px; color: var(--forest); margin-bottom: 6px; }
+.footer-social a { color: var(--forest); display: inline-flex; }
+.footer-social a:hover { color: var(--sage-deep); }
+.footer-social a:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.footer-social svg .dot { fill: currentColor; stroke: none; }
 .footer-links {
   display: flex;
   justify-content: center;
@@ -818,7 +867,7 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
 }
 
 /* =========================================================================
-   PREMIUM REDESIGN — added for the boutique-studio rebuild.
+   PREMIUM REDESIGN: added for the boutique-studio rebuild.
    Reuses the existing brand tokens (--sage/--ivory/--linen/--champagne/
    --forest/--ink/--stone), radius, fonts and animation timings throughout.
    No new colours or fonts are introduced.
@@ -852,7 +901,10 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
 }
 .nav-social { display: flex; align-items: center; gap: 16px; }
 .nav-social a { color: #FFFBF7; display: inline-flex; }
-.nav-social a:hover { color: var(--champagne); }
+.nav-social a:hover {
+  color: var(--champagne);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
 .nav-social svg {
   width: 19px;
   height: 19px;
@@ -1001,7 +1053,10 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
   z-index: 1;
   padding: 28px;
 }
-.treatment-card-body .eyebrow { color: var(--champagne); }
+.treatment-card-body .eyebrow {
+  color: var(--champagne);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--champagne) 40%, transparent);
+}
 .treatment-card-body h3 { font-size: 1.6rem; margin-bottom: 6px; }
 .treatment-card-body span {
   display: inline-flex;
@@ -1344,6 +1399,21 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
 .aftercare-card p { font-size: 0.94rem; color: color-mix(in srgb, var(--ink) 75%, var(--sage)); flex: 1; }
 .aftercare-card .service-tile-link { margin-top: 18px; }
 
+/* ---------- Social CTA row (Instagram / Facebook, used sparingly) ---------- */
+.social-cta-row { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+.btn-icon { display: inline-flex; align-items: center; gap: 10px; }
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn-icon svg .dot { fill: currentColor; stroke: none; }
+
 /* ---------- Premium redesign: mobile ---------- */
 @media (max-width: 767px) {
   .hero-full { min-height: 88vh; align-items: flex-end; }
@@ -1361,4 +1431,6 @@ footer .wordmark { font-size: 1.2rem; color: var(--forest); display: inline-bloc
   .lightbox-nav { width: 40px; height: 40px; }
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
+  .social-cta-row { gap: 14px; }
+  .service-tile-actions { gap: 14px; }
 }
