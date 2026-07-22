@@ -130,20 +130,27 @@ header {
   color: #FFFBF7;
   border: 1px solid #FFFBF7;
 }
-.btn-light:hover {
+.btn-light:hover,
+.btn-light:focus-visible {
   background: color-mix(in srgb, var(--ivory) 14%, transparent);
-  box-shadow: 0 0 18px color-mix(in srgb, var(--champagne) 45%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 22px color-mix(in srgb, var(--champagne) 50%, transparent);
 }
 .btn-light:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; }
-/* Forest outline for buttons on ivory / linen sections, where white would disappear */
+/* Forest outline for buttons on ivory / linen sections, where white would disappear.
+   Champagne and ivory/linen are close in lightness, so a soft blur alone barely
+   shows here - the solid inset ring (0 0 0 3px) is what actually reads as a glow
+   on light backgrounds, topped with the same soft bloom used everywhere else. */
 .btn-dark {
   color: var(--forest);
   border: 1px solid var(--forest);
 }
-.btn-dark:hover {
+.btn-dark:hover,
+.btn-dark:focus-visible {
   background: var(--forest);
   color: var(--ivory);
-  box-shadow: 0 0 18px color-mix(in srgb, var(--champagne) 45%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--champagne) 65%, transparent),
+              0 0 22px color-mix(in srgb, var(--champagne) 50%, transparent);
 }
 .btn-dark:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 .btn-nav { padding: 10px 26px; }
@@ -312,7 +319,8 @@ section { padding: 96px 0; }
   transform: translateY(-4px);
   border-color: var(--sage);
   background: var(--champagne);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
 .service-tile-photo {
   aspect-ratio: 4 / 3;
@@ -419,6 +427,11 @@ section { padding: 96px 0; }
   border-radius: var(--radius);
   padding: 48px;
   margin-bottom: 28px;
+  transition: box-shadow 0.25s ease;
+}
+.menu-group:hover {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
 .menu-group-linen { background: var(--linen); }
 .menu-group-champagne { background: var(--champagne); }
@@ -486,6 +499,11 @@ section { padding: 96px 0; }
   background: var(--linen);
   border-radius: var(--radius);
   overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+.news-card:hover {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
 .news-card summary {
   display: flex;
@@ -1086,7 +1104,10 @@ footer {
 }
 .treatment-card:focus-visible { outline: 2px solid var(--champagne); outline-offset: 4px; }
 .treatment-card:hover,
-.treatment-card:focus-visible { box-shadow: 0 0 26px color-mix(in srgb, var(--champagne) 45%, transparent); }
+.treatment-card:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 28px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
 
 /* ---------- Artist intro (Meet Your Artist) ---------- */
 .artist-split {
@@ -1167,6 +1188,11 @@ footer {
   border: 1px solid var(--stone);
   border-radius: var(--radius);
   overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+.faq-item:hover {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
 .faq-item summary {
   display: flex;
@@ -1204,7 +1230,11 @@ footer {
   border-radius: 999px;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-.gallery-filter:hover { border-color: var(--sage); }
+.gallery-filter:hover {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 16px color-mix(in srgb, var(--champagne) 45%, transparent);
+}
 .gallery-filter[aria-pressed="true"] {
   background: var(--forest);
   border-color: var(--forest);
@@ -1237,7 +1267,10 @@ footer {
 .gallery-item:hover img,
 .gallery-item:focus-visible img { transform: scale(1.06); }
 .gallery-item:hover,
-.gallery-item:focus-visible { box-shadow: 0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent); }
+.gallery-item:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
+}
 .gallery-item:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 .gallery-item-label {
   position: absolute;
@@ -1408,7 +1441,8 @@ footer {
 .aftercare-card:hover, .aftercare-card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--sage);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
 .aftercare-card:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 .aftercare-card h3 { font-size: 1.35rem; margin: 16px 0 10px; }
