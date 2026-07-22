@@ -1228,7 +1228,7 @@ footer {
   color: var(--ink);
   cursor: pointer;
   border-radius: 999px;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .gallery-filter:hover {
   border-color: var(--sage);
@@ -1239,6 +1239,8 @@ footer {
   background: var(--forest);
   border-color: var(--forest);
   color: var(--ivory);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 16px color-mix(in srgb, var(--champagne) 45%, transparent);
 }
 .gallery-grid {
   display: grid;
