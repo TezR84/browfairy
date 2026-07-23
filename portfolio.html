@@ -42,16 +42,11 @@
   </div>
 
   <!--
-    Four category tiles, one per filter (not counting "All", which is a
-    gallery filter rather than its own treatment category). TODO: as real
-    client work photos become available (with consent), add more items here
-    with an accurate data-category ("brows", "lashes", "micropigmentation"
-    or "makeup" - space-separated if a photo genuinely fits more than one).
-    The filter buttons and lightbox work automatically with however many
-    items are here - no other changes needed to add more. The
-    micropigmentation tile below reuses a generic precision-treatment photo
-    as a placeholder (same stand-in already used on the homepage's
-    Micropigmentation treatment card) until a real result photo is available.
+    TODO: as more real client work photos become available (with consent),
+    add more items here with an accurate data-category ("brows", "lashes",
+    "micropigmentation" or "makeup" - space-separated if a photo genuinely
+    fits more than one). The filter buttons and lightbox work automatically
+    with however many items are here - no other changes needed to add more.
   -->
   <section>
     <div class="wrap">
@@ -62,7 +57,7 @@
         <button class="gallery-filter" id="filter-micropigmentation" data-filter="micropigmentation" aria-pressed="false">Micropigmentation &amp; Semi-Permanent Makeup</button>
         <button class="gallery-filter" id="filter-makeup" data-filter="makeup" aria-pressed="false">Makeup</button>
       </div>
-      <div class="gallery-grid gallery-grid-4col reveal">
+      <div class="gallery-grid reveal">
         <button class="gallery-item" data-category="brows" data-full="assets/photos/client-portrait.jpg">
           <img src="assets/photos/client-portrait.jpg" alt="Natural, well-shaped eyebrows, close-up portrait" loading="lazy">
           <span class="gallery-item-label">Brows</span>
@@ -71,13 +66,25 @@
           <img src="assets/photos/lash-treatment-2.jpg" alt="Lash extension application, close-up detail" loading="lazy">
           <span class="gallery-item-label">Lashes</span>
         </button>
-        <button class="gallery-item" data-category="micropigmentation" data-full="assets/photos/lash-treatment-3.jpg">
-          <img src="assets/photos/lash-treatment-3.jpg" alt="Precision beauty treatment being carried out in a studio" loading="lazy">
+        <button class="gallery-item" data-category="micropigmentation" data-full="assets/photos/micropigmentation-brow-result.jpg">
+          <img src="assets/photos/micropigmentation-brow-result.jpg" alt="Before and after semi-permanent brow micropigmentation result" loading="lazy">
           <span class="gallery-item-label">Micropigmentation &amp; Semi-Permanent Makeup</span>
         </button>
         <button class="gallery-item" data-category="makeup" data-full="assets/photos/makeup-artist.jpg">
           <img src="assets/photos/makeup-artist.jpg" alt="Makeup artistry session in a bright studio" loading="lazy">
           <span class="gallery-item-label">Makeup</span>
+        </button>
+        <button class="gallery-item" data-category="brows" data-full="assets/photos/brow-design-before-after.jpg">
+          <img src="assets/photos/brow-design-before-after.jpg" alt="Before and after brow design, showing a fuller, more defined shape" loading="lazy">
+          <span class="gallery-item-label">Brow design</span>
+        </button>
+        <button class="gallery-item" data-category="micropigmentation" data-full="assets/photos/micropigmentation-mapping-process.jpg">
+          <img src="assets/photos/micropigmentation-mapping-process.jpg" alt="Brow mapping in progress ahead of a micropigmentation appointment" loading="lazy">
+          <span class="gallery-item-label">Brow mapping</span>
+        </button>
+        <button class="gallery-item" data-category="micropigmentation" data-full="assets/photos/micropigmentation-colour-matching.jpg">
+          <img src="assets/photos/micropigmentation-colour-matching.jpg" alt="Pigment colour matching being carried out for a micropigmentation treatment" loading="lazy">
+          <span class="gallery-item-label">Colour matching</span>
         </button>
       </div>
     </div>
