@@ -1406,7 +1406,7 @@ footer {
   padding: 36px;
   text-align: center;
 }
-.voucher-figure img { height: 44px; width: auto; margin: 0 auto; display: block; }
+.voucher-figure img { height: 76px; width: auto; margin: 0 auto; display: block; }
 .voucher-figure p { color: var(--ivory); margin: 14px 0 0; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* ---------- Section image reveal (generic desaturate-to-colour on scroll-in) ---------- */
