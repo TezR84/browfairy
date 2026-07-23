@@ -441,8 +441,9 @@ section { padding: 96px 0; }
 }
 .menu-group-linen { background: var(--linen); }
 .menu-group-champagne { background: var(--champagne); }
-.menu-group-forest { background: var(--forest); color: var(--ivory); }
-.menu-group-forest .menu-group-note { color: color-mix(in srgb, var(--ivory) 78%, var(--forest)); }
+/* Subtle pale-sage tint - a lighter alternative to the old solid-forest
+   variant, which stood out too strongly next to the linen/champagne groups. */
+.menu-group-sage { background: color-mix(in srgb, var(--sage) 14%, var(--ivory)); }
 .menu-group h2 { font-size: 1.9rem; margin-bottom: 18px; }
 .menu-group-note {
   font-size: 0.88rem;
@@ -761,12 +762,12 @@ a:not(.btn):focus-visible {
 }
 /* Thin outlines on panels, echoing the graphic's fine-lined cards */
 .menu-group-linen,
+.menu-group-sage,
 .news-card { border: 1px solid color-mix(in srgb, var(--sage) 40%, transparent); }
 .menu-group-champagne,
 .contact-panel,
 .tile-champagne { border: 1px solid color-mix(in srgb, var(--forest) 18%, transparent); }
-.tile-forest,
-.menu-group-forest { border: 1px solid color-mix(in srgb, var(--champagne) 45%, transparent); }
+.tile-forest { border: 1px solid color-mix(in srgb, var(--champagne) 45%, transparent); }
 
 /* ---------- Script accents & line icons (from brand social graphics) ---------- */
 .script { font-family: "Allura", cursive; font-weight: 400; }
