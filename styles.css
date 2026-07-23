@@ -1345,13 +1345,27 @@ footer {
   background: var(--forest);
   border-color: var(--forest);
   color: var(--ivory);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
-              0 0 16px color-mix(in srgb, var(--champagne) 45%, transparent);
+  /* Deliberately a touch stronger than the hover glow above, so the active
+     filter still reads as "more selected" than whatever's just being hovered. */
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 70%, transparent),
+              0 0 20px color-mix(in srgb, var(--champagne) 55%, transparent);
 }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+/* Portfolio's four category tiles - a variant of .gallery-grid scoped with
+   its own class (rather than changing the base grid) since .gallery-grid is
+   also reused for the homepage's 3-photo portfolio teaser, which shouldn't
+   pick up a 4-column layout. Compound-selector specificity here so it wins
+   over the general mobile .gallery-grid rule below regardless of source order. */
+.gallery-grid.gallery-grid-4col { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 979px) {
+  .gallery-grid.gallery-grid-4col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .gallery-grid.gallery-grid-4col { grid-template-columns: 1fr; }
 }
 .gallery-item {
   border: 0;

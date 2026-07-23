@@ -114,6 +114,15 @@
     };
     galleryItems.forEach(function (item) {
       item.addEventListener("click", function () {
+        // Applying the item's own category filter first (if it isn't already
+        // active) means closing the lightbox leaves the gallery filtered to
+        // match what was just viewed, and the filter scales cleanly as more
+        // photos are added per category later.
+        var category = (item.getAttribute("data-category") || "").split(" ")[0];
+        var matchingFilter = category && document.getElementById("filter-" + category);
+        if (matchingFilter && matchingFilter.getAttribute("aria-pressed") !== "true") {
+          matchingFilter.click();
+        }
         openAt(visibleItems().indexOf(item));
       });
     });

@@ -42,11 +42,16 @@
   </div>
 
   <!--
-    TODO: as real client work photos become available (with consent), replace the
-    images below and give each one an accurate data-category (space-separated if
-    it fits more than one: "brows", "lashes", "micropigmentation", "makeup").
-    The filter buttons and lightbox work automatically with however many items
-    are here - no other changes needed to add more.
+    Four category tiles, one per filter (not counting "All", which is a
+    gallery filter rather than its own treatment category). TODO: as real
+    client work photos become available (with consent), add more items here
+    with an accurate data-category ("brows", "lashes", "micropigmentation"
+    or "makeup" - space-separated if a photo genuinely fits more than one).
+    The filter buttons and lightbox work automatically with however many
+    items are here - no other changes needed to add more. The
+    micropigmentation tile below reuses a generic precision-treatment photo
+    as a placeholder (same stand-in already used on the homepage's
+    Micropigmentation treatment card) until a real result photo is available.
   -->
   <section>
     <div class="wrap">
@@ -54,33 +59,25 @@
         <button class="gallery-filter" id="filter-all" data-filter="all" aria-pressed="true">All</button>
         <button class="gallery-filter" id="filter-brows" data-filter="brows" aria-pressed="false">Brows</button>
         <button class="gallery-filter" id="filter-lashes" data-filter="lashes" aria-pressed="false">Lashes</button>
-        <button class="gallery-filter" id="filter-micropigmentation" data-filter="micropigmentation" aria-pressed="false">Micropigmentation</button>
+        <button class="gallery-filter" id="filter-micropigmentation" data-filter="micropigmentation" aria-pressed="false">Micropigmentation &amp; Semi-Permanent Makeup</button>
         <button class="gallery-filter" id="filter-makeup" data-filter="makeup" aria-pressed="false">Makeup</button>
       </div>
-      <div class="gallery-grid reveal">
-        <button class="gallery-item" data-category="brows micropigmentation" data-full="assets/photos/client-portrait.jpg">
+      <div class="gallery-grid gallery-grid-4col reveal">
+        <button class="gallery-item" data-category="brows" data-full="assets/photos/client-portrait.jpg">
           <img src="assets/photos/client-portrait.jpg" alt="Natural, well-shaped eyebrows, close-up portrait" loading="lazy">
-          <span class="gallery-item-label">Brow design</span>
+          <span class="gallery-item-label">Brows</span>
         </button>
         <button class="gallery-item" data-category="lashes" data-full="assets/photos/lash-treatment-2.jpg">
           <img src="assets/photos/lash-treatment-2.jpg" alt="Lash extension application, close-up detail" loading="lazy">
-          <span class="gallery-item-label">Lash treatment</span>
+          <span class="gallery-item-label">Lashes</span>
+        </button>
+        <button class="gallery-item" data-category="micropigmentation" data-full="assets/photos/lash-treatment-3.jpg">
+          <img src="assets/photos/lash-treatment-3.jpg" alt="Precision beauty treatment being carried out in a studio" loading="lazy">
+          <span class="gallery-item-label">Micropigmentation &amp; Semi-Permanent Makeup</span>
         </button>
         <button class="gallery-item" data-category="makeup" data-full="assets/photos/makeup-artist.jpg">
           <img src="assets/photos/makeup-artist.jpg" alt="Makeup artistry session in a bright studio" loading="lazy">
-          <span class="gallery-item-label">Makeup artistry</span>
-        </button>
-        <button class="gallery-item" data-category="lashes" data-full="assets/photos/lash-treatment-1.jpg">
-          <img src="assets/photos/lash-treatment-1.jpg" alt="Beautician applying a lash treatment" loading="lazy">
-          <span class="gallery-item-label">Lash treatment</span>
-        </button>
-        <button class="gallery-item" data-category="lashes" data-full="assets/photos/lash-treatment-3.jpg">
-          <img src="assets/photos/lash-treatment-3.jpg" alt="Precision lash work in progress" loading="lazy">
-          <span class="gallery-item-label">Lash treatment</span>
-        </button>
-        <button class="gallery-item" data-category="makeup" data-full="assets/photos/studio-interior.jpg">
-          <img src="assets/photos/studio-interior.jpg" alt="Elegant, minimal studio interior" loading="lazy">
-          <span class="gallery-item-label">The studio</span>
+          <span class="gallery-item-label">Makeup</span>
         </button>
       </div>
     </div>
