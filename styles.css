@@ -1046,9 +1046,10 @@ footer {
 }
 .feature-item h3 { font-size: 1.35rem; margin: 16px 0 10px; }
 .feature-item p { font-size: 0.96rem; color: color-mix(in srgb, var(--ink) 75%, var(--sage)); }
-/* Homepage "Why choose us" wants its icon/heading/text centred; the same
-   .feature-item is reused (left-aligned) on about.html, so this is scoped
-   to an extra class rather than changing the shared .feature-item itself. */
+/* Centred variant: icon/heading/text centred instead of the default left
+   alignment. Used on the homepage's "Why choose us" and about.html's "Her
+   approach" - an extra class rather than changing .feature-item itself, in
+   case a future left-aligned use of the component is ever needed again. */
 .feature-list-centered .feature-item { text-align: center; }
 
 /* ---------- Treatment cards (featured treatments grid) ---------- */
