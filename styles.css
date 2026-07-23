@@ -703,7 +703,6 @@ section { padding: 96px 0; }
 .hero-full h1 em,
 .booking .script,
 .booking h2,
-.voucher-figure .script,
 .oval-badge {
   text-shadow: 0 0 12px color-mix(in srgb, var(--champagne) 60%, transparent),
                0 0 32px color-mix(in srgb, var(--champagne) 35%, transparent);
@@ -1407,8 +1406,8 @@ footer {
   padding: 36px;
   text-align: center;
 }
-.voucher-figure .script { font-size: 1.6rem; color: var(--champagne); }
-.voucher-figure p { color: var(--ivory); margin: 10px 0 0; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.voucher-figure img { height: 44px; width: auto; margin: 0 auto; display: block; }
+.voucher-figure p { color: var(--ivory); margin: 14px 0 0; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* ---------- Section image reveal (generic desaturate-to-colour on scroll-in) ---------- */
 .img-reveal { overflow: hidden; }
