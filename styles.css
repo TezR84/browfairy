@@ -1334,22 +1334,32 @@ footer {
   justify-content: center;
   margin-bottom: 44px;
 }
+/* Matches .btn-dark's shape, padding, typography and hover/active treatment
+   (same as the "View more on Instagram/Facebook" buttons below on this
+   page), so the filters read as part of the same button system rather than
+   a separate pill style. One deliberate difference: no white-space:nowrap -
+   the "Micropigmentation & Semi-Permanent Makeup" label needs to be able to
+   wrap on narrow phones, since .gallery-filters already wraps whole buttons
+   onto new rows but can't be relied on alone to prevent that one long label
+   overflowing a small viewport. */
 .gallery-filter {
   font-family: "Jost", sans-serif;
-  font-size: 0.88rem;
-  letter-spacing: 0.05em;
-  padding: 10px 22px;
-  border: 1px solid var(--stone);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 13px 32px;
+  border: 1px solid var(--forest);
   background: transparent;
-  color: var(--ink);
+  color: var(--forest);
   cursor: pointer;
-  border-radius: 999px;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .gallery-filter:hover {
-  border-color: var(--sage);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
-              0 0 16px color-mix(in srgb, var(--champagne) 45%, transparent);
+  background: var(--forest);
+  color: var(--ivory);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--champagne) 65%, transparent),
+              0 0 22px color-mix(in srgb, var(--champagne) 50%, transparent);
 }
 .gallery-filter[aria-pressed="true"] {
   background: var(--forest);
@@ -1357,8 +1367,8 @@ footer {
   color: var(--ivory);
   /* Deliberately a touch stronger than the hover glow above, so the active
      filter still reads as "more selected" than whatever's just being hovered. */
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 70%, transparent),
-              0 0 20px color-mix(in srgb, var(--champagne) 55%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--champagne) 75%, transparent),
+              0 0 26px color-mix(in srgb, var(--champagne) 60%, transparent);
 }
 .gallery-grid {
   display: grid;
