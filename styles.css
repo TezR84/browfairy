@@ -53,6 +53,24 @@ header {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid color-mix(in srgb, var(--ivory) 18%, transparent);
 }
+/* Swapped header/page-band scheme: pale sage header with a dark forest
+   title banner underneath, instead of the default dark header + pale band.
+   Scoped to <body class="header-swap"> (About/Services/Portfolio/Aftercare/
+   News/Contact) rather than changed globally, so the homepage's hero and
+   policies.html's page-band are unaffected. Nav text/icons/logo stay their
+   usual light colour - sage is still dark enough for them to read clearly,
+   same as the existing ivory-on-sage page-band icon already relies on. */
+body.header-swap header {
+  background: color-mix(in srgb, var(--sage) 94%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--forest) 15%, transparent);
+}
+body.header-swap .nav-links {
+  background: var(--sage);
+}
+body.header-swap .page-band {
+  background: var(--forest);
+  color: var(--ivory);
+}
 /* Anchor-jump targets (e.g. the aftercare guide cards, #pricing, #treatments)
    land with their heading tucked under the sticky 68px header without this -
    scroll-margin-top pushes the scroll position down so the title clears it. */
@@ -773,7 +791,8 @@ section { padding: 96px 0; }
 .hero-full h1 em,
 .booking .script,
 .booking h2,
-.oval-badge {
+.oval-badge,
+body.header-swap .page-band h1 {
   text-shadow: 0 0 12px color-mix(in srgb, var(--champagne) 60%, transparent),
                0 0 32px color-mix(in srgb, var(--champagne) 35%, transparent);
 }
