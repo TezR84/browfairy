@@ -648,7 +648,8 @@ section { padding: 96px 0; }
   line-height: 1;
 }
 .news-toggle::before { content: "+"; }
-.news-card[open] .news-toggle::before { content: "\2212"; }
+.news-card[open] .news-toggle::before,
+.guide-card[open] .news-toggle::before { content: "\2212"; }
 .news-card-body { padding: 0 24px 32px; }
 .news-card-body p { max-width: 60ch; margin-bottom: 12px; }
 .news-card-body p:last-of-type { margin-bottom: 0; }
@@ -1578,18 +1579,92 @@ footer {
   color: inherit;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 .aftercare-card:hover, .aftercare-card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--sage);
+  background: var(--forest);
+  color: var(--ivory);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
               0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
-.aftercare-card:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+/* h3 and the icon-circle have no colour of their own, so they inherit the
+   ivory set above automatically - only these two need an explicit override. */
+.aftercare-card:hover p, .aftercare-card:focus-visible p {
+  color: color-mix(in srgb, var(--ivory) 85%, var(--forest));
+}
+.aftercare-card:hover .service-tile-link, .aftercare-card:focus-visible .service-tile-link {
+  color: var(--champagne);
+}
+.aftercare-card:active { transform: translateY(-2px) scale(0.99); }
+.aftercare-card:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; }
 .aftercare-card h3 { font-size: 1.35rem; margin: 16px 0 10px; }
 .aftercare-card p { font-size: 0.94rem; color: color-mix(in srgb, var(--ink) 75%, var(--sage)); flex: 1; }
 .aftercare-card .service-tile-link { margin-top: 18px; }
+@media (prefers-reduced-motion: reduce) {
+  .aftercare-card { transition: none; }
+  .aftercare-card:hover, .aftercare-card:focus-visible { transform: none; }
+}
+
+/* ---------- Aftercare guide accordion cards ----------
+   Reuses the news-card/faq-item pattern (native <details>/<summary>, the
+   same .news-toggle +/- control) rather than a one-off component. The
+   name="aftercare-guides" attribute on each <details> is native HTML - the
+   browser keeps only one open at a time with no JS required. */
+.guide-list { display: grid; gap: 16px; }
+.guide-card {
+  background: var(--ivory);
+  border: 1px solid var(--stone);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.guide-card:hover, .guide-card:focus-within {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
+              0 0 20px color-mix(in srgb, var(--champagne) 40%, transparent);
+}
+.guide-card[open] { border-color: var(--forest); }
+.guide-card summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 28px;
+  cursor: pointer;
+  list-style: none;
+}
+.guide-card summary::-webkit-details-marker { display: none; }
+.guide-card summary::marker { content: ""; }
+.guide-card .icon-circle { flex-shrink: 0; transition: border-color 0.2s ease, color 0.2s ease; }
+.guide-card[open] .icon-circle { border-color: var(--forest); color: var(--forest); }
+.guide-summary-text { flex: 1; min-width: 0; }
+.guide-summary-text h2 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  transition: color 0.2s ease;
+}
+.guide-card[open] .guide-summary-text h2 { color: var(--forest); }
+.guide-summary-text p {
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--ink) 75%, var(--sage));
+  margin: 0;
+}
+.guide-card .news-toggle { flex-shrink: 0; }
+.guide-card-body {
+  padding: 4px 28px 32px;
+  border-top: 1px solid var(--stone);
+  margin: 0 28px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.guide-card-body p:first-child { margin-top: 20px; }
+.guide-card-body p { max-width: 65ch; margin-bottom: 14px; }
+.guide-card-body p:last-child { margin-bottom: 0; }
+@media (max-width: 767px) {
+  .guide-card summary { padding: 16px 18px; gap: 14px; }
+  .guide-card-body { margin: 0 18px; }
+}
 
 /* ---------- Social CTA row (Instagram / Facebook, used sparingly) ---------- */
 .social-cta-row { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }

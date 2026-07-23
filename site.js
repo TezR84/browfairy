@@ -143,4 +143,19 @@
       if (e.key === "ArrowLeft") openAt(currentIndex - 1);
     });
   }
+
+  // Aftercare guide accordion: modern browsers already auto-open a <details>
+  // when a fragment link scrolls to it, but this makes it reliable
+  // everywhere - both on initial load with a hash, and when a "find your
+  // guide" tile is clicked while already on the page.
+  var openGuideFromHash = function (hash) {
+    var target = document.getElementById((hash || "").replace("#", ""));
+    if (target && target.tagName === "DETAILS") target.open = true;
+  };
+  openGuideFromHash(window.location.hash);
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      openGuideFromHash(link.getAttribute("href"));
+    });
+  });
 })();
