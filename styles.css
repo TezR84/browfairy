@@ -71,6 +71,16 @@ body.header-swap .page-band {
   background: var(--forest);
   color: var(--ivory);
 }
+/* Softer supporting line beneath the title on the dark banner - same
+   family/weight/line-height as the site's other secondary copy (e.g. the
+   "Her approach" feature text, .booking p), not the bolder near-white
+   .page-band p default below (which stays as-is for policies.html, the
+   only page-band this task didn't ask to touch). */
+body.header-swap .page-band p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: color-mix(in srgb, var(--ivory) 85%, var(--forest));
+}
 /* Anchor-jump targets (e.g. the aftercare guide cards, #pricing, #treatments)
    land with their heading tucked under the sticky 68px header without this -
    scroll-margin-top pushes the scroll position down so the title clears it. */
