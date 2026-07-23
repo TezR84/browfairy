@@ -324,10 +324,24 @@ section { padding: 96px 0; }
 .service-tile:focus-within {
   transform: translateY(-4px);
   border-color: var(--sage);
-  background: var(--champagne);
+  background: var(--forest);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--champagne) 55%, transparent),
               0 0 24px color-mix(in srgb, var(--champagne) 40%, transparent);
 }
+/* Text within the tile flips to the light brand colours once the tile
+   itself goes dark on hover/focus, so everything stays legible. */
+.service-tile:hover .service-tile-body h3,
+.service-tile:focus-within .service-tile-body h3 { color: var(--ivory); }
+.service-tile:hover .service-tile-body p,
+.service-tile:focus-within .service-tile-body p { color: color-mix(in srgb, var(--ivory) 85%, var(--forest)); }
+.service-tile:hover .service-tile-meta,
+.service-tile:focus-within .service-tile-meta { border-top-color: color-mix(in srgb, var(--ivory) 25%, transparent); }
+.service-tile:hover .service-tile-price,
+.service-tile:focus-within .service-tile-price { color: var(--champagne); }
+.service-tile:hover .service-tile-link,
+.service-tile:focus-within .service-tile-link { color: var(--champagne); }
+.service-tile:hover .service-tile-actions a,
+.service-tile:focus-within .service-tile-actions a { color: color-mix(in srgb, var(--ivory) 75%, var(--forest)); }
 .service-tile-photo {
   aspect-ratio: 4 / 3;
   filter: grayscale(65%) saturate(65%);
@@ -380,6 +394,17 @@ section { padding: 96px 0; }
   outline: 2px solid var(--forest);
   outline-offset: 3px;
 }
+/* The tile's own hover/focus-within already turns the link champagne (see
+   above); these win back over the two plain rules just above when the link
+   itself is the thing being hovered/focused, since a forest outline or
+   sage-deep fill would otherwise disappear against the now-forest tile. */
+.service-tile:hover .service-tile-link:hover,
+.service-tile:focus-within .service-tile-link:focus-visible {
+  color: var(--champagne);
+}
+.service-tile:focus-within .service-tile-link:focus-visible {
+  outline-color: var(--champagne);
+}
 /* Secondary actions (View prices / View portfolio) - deliberately quieter than
    the primary "Book a consultation" link above, so the hierarchy stays clear. */
 .service-tile-actions {
@@ -397,6 +422,13 @@ section { padding: 96px 0; }
 }
 .service-tile-actions a:hover { color: var(--forest); }
 .service-tile-actions a:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+.service-tile:hover .service-tile-actions a:hover,
+.service-tile:focus-within .service-tile-actions a:focus-visible {
+  color: var(--champagne);
+}
+.service-tile:focus-within .service-tile-actions a:focus-visible {
+  outline-color: var(--champagne);
+}
 @media (prefers-reduced-motion: reduce) {
   .service-tile,
   .service-tile-photo,
