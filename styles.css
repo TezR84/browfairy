@@ -145,13 +145,23 @@ body.header-swap .page-band p {
   border-radius: 8px;
   background: transparent;
   text-decoration: none;
+  font-family: inherit;
   font-size: 0.95rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   white-space: nowrap;
+  cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .btn:active { transform: translateY(1px) scale(0.98); }
+/* Placeholder buttons (e.g. "Start a chat" ahead of the chat widget existing) -
+   pointer-events: none stops :hover/:focus-visible ever triggering, so the
+   glow/fill treatment below never fires on something you can't actually use. */
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 /* White outline for buttons on sage / forest sections. Hover glow echoes the
    champagne glow used on the logo and script lettering elsewhere on the site. */
 .btn-light {
@@ -336,8 +346,11 @@ section { padding: 96px 0; }
    service delivers. */
 .service-tiles {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+@media (max-width: 979px) {
+  .service-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .service-tile {
   background: var(--ivory);
@@ -371,7 +384,7 @@ section { padding: 96px 0; }
 .service-tile:hover .service-tile-actions a,
 .service-tile:focus-within .service-tile-actions a { color: color-mix(in srgb, var(--ivory) 75%, var(--forest)); }
 .service-tile-photo {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   filter: grayscale(65%) saturate(65%);
   transition: filter 0.4s ease;
 }
@@ -381,16 +394,16 @@ section { padding: 96px 0; }
 }
 .service-tile-photo img { width: 100%; height: 100%; object-fit: cover; }
 .service-tile-body {
-  padding: 28px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.service-tile-body h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.service-tile-body h3 { font-size: 1.2rem; margin-bottom: 6px; }
 .service-tile-body p {
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   color: color-mix(in srgb, var(--ink) 75%, var(--sage));
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   flex: 1;
 }
 .service-tile-meta {
@@ -398,12 +411,12 @@ section { padding: 96px 0; }
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 8px 16px;
-  padding-top: 18px;
+  gap: 6px 14px;
+  padding-top: 12px;
   border-top: 1px solid var(--stone);
 }
 .service-tile-price {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -414,7 +427,7 @@ section { padding: 96px 0; }
   color: var(--forest);
   text-decoration: underline;
   text-underline-offset: 3px;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   white-space: nowrap;
 }
 .service-tile-link:hover { color: var(--sage-deep); }
@@ -437,12 +450,12 @@ section { padding: 96px 0; }
    the primary "Book a consultation" link above, so the hierarchy stays clear. */
 .service-tile-actions {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 .service-tile-actions a {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--ink) 65%, var(--sage));
   text-decoration: underline;
@@ -981,8 +994,8 @@ footer {
   .tile-feature { grid-row: auto; min-height: 420px; }
   section { padding: 64px 0; }
   .split-grid, .split-grid.flip { gap: 32px; }
-  .service-tiles { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .service-tile-body { padding: 22px; }
+  .service-tiles { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .service-tile-body { padding: 16px; }
   .page-band { padding: 56px 0; }
   .menu-group { padding: 24px 20px; }
   .menu-rows { grid-template-columns: 1fr; gap: 18px; }
