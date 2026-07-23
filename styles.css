@@ -913,6 +913,14 @@ footer {
   margin-bottom: 14px;
 }
 .eyebrow.on-dark { color: var(--champagne); }
+/* Dark-forest section variant, used where a section needs a richer
+   background so the champagne hover glow on its tiles/buttons reads more
+   clearly than it does against ivory/linen (Featured treatments, the
+   homepage portfolio teaser). Same forest tone already used for .booking
+   and .voucher-panel, just applied to a regular content section. */
+.section-dark { background: var(--forest); color: var(--ivory); }
+.section-dark h2, .section-dark h3 { color: var(--ivory); }
+.section-dark p { color: color-mix(in srgb, var(--ivory) 88%, var(--forest)); }
 .display-heading {
   font-size: clamp(2.6rem, 5.4vw, 4.4rem);
   font-weight: 300;
@@ -1038,6 +1046,10 @@ footer {
 }
 .feature-item h3 { font-size: 1.35rem; margin: 16px 0 10px; }
 .feature-item p { font-size: 0.96rem; color: color-mix(in srgb, var(--ink) 75%, var(--sage)); }
+/* Homepage "Why choose us" wants its icon/heading/text centred; the same
+   .feature-item is reused (left-aligned) on about.html, so this is scoped
+   to an extra class rather than changing the shared .feature-item itself. */
+.feature-list-centered .feature-item { text-align: center; }
 
 /* ---------- Treatment cards (featured treatments grid) ---------- */
 .treatment-cards {
