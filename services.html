@@ -117,11 +117,11 @@
     </div>
   </section>
 
-  <!-- Treatment Journey (same component as the homepage) -->
-  <section>
+  <!-- Treatment Journey (same component as the homepage, dark variant here for a clear visual break) -->
+  <section class="section-dark">
     <div class="wrap">
       <div class="section-head reveal" style="text-align: center; margin: 0 auto 64px;">
-        <p class="eyebrow" style="text-align: center;">How it works</p>
+        <p class="eyebrow on-dark" style="text-align: center;">How it works</p>
         <h2 class="display-heading" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">Your treatment journey</h2>
         <p style="margin-top: 16px;">First time here? This is exactly what to expect, start to finish.</p>
       </div>
@@ -160,41 +160,31 @@
       <div class="menu-group menu-group-linen reveal" id="brows-pricing">
         <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 20c4-8 16-12 24-6"/><path d="M7 19l3-5M11 16.5l3-5M15.5 14.5l2.5-4.5M20 13l2-4"/></svg></div>
         <h2>Brows and lashes</h2>
-        <div class="menu-rows">
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Brow design</div>
-              <div class="menu-desc">The signature appointment: mapping, shaping with wax and tweezers, and a custom tint.</div>
-            </div>
-            <div class="menu-price">&pound;30 &middot; 1 hr</div>
+        <div class="price-tiles">
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Brow design</h3><span class="price-tile-price">&pound;30</span></div>
+            <p class="price-tile-desc">The signature appointment: mapping, shaping with wax and tweezers, and a custom tint.</p>
+            <span class="price-tile-duration">1 hr</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Brow lamination</div>
-              <div class="menu-desc">Includes shape and tint, finished with a nourishing treatment. Lasts for weeks.</div>
-            </div>
-            <div class="menu-price">&pound;40 &middot; 1 hr 30 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Brow lamination</h3><span class="price-tile-price">&pound;40</span></div>
+            <p class="price-tile-desc">Includes shape and tint, finished with a nourishing treatment. Lasts for weeks.</p>
+            <span class="price-tile-duration">1 hr 30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Lash lift</div>
-              <div class="menu-desc">A natural curl and lift with a tint to match. No extensions required.</div>
-            </div>
-            <div class="menu-price">&pound;35 &middot; 1 hr 30 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Lash lift</h3><span class="price-tile-price">&pound;35</span></div>
+            <p class="price-tile-desc">A natural curl and lift with a tint to match. No extensions required.</p>
+            <span class="price-tile-duration">1 hr 30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Brow maintenance</div>
-              <div class="menu-desc">A tidy and reshape to keep your existing design crisp between full appointments.</div>
-            </div>
-            <div class="menu-price">&pound;25 &middot; 1 hr</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Brow maintenance</h3><span class="price-tile-price">&pound;25</span></div>
+            <p class="price-tile-desc">A tidy and reshape to keep your existing design crisp between full appointments.</p>
+            <span class="price-tile-duration">1 hr</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Patch test</div>
-              <div class="menu-desc">Required at least 48 hours before your first tint or lamination appointment, for your safety.</div>
-            </div>
-            <div class="menu-price">Free &middot; 15 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Patch test</h3><span class="price-tile-price">Free</span></div>
+            <p class="price-tile-desc">Required at least 48 hours before your first tint or lamination appointment, for your safety.</p>
+            <span class="price-tile-duration">15 mins</span>
           </div>
         </div>
         <p class="menu-group-note">See recent results in the <a href="portfolio.html#filter-brows">brow &amp; lash portfolio</a>.</p>
@@ -203,34 +193,26 @@
       <div class="menu-group menu-group-champagne reveal" id="makeup-pricing">
         <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 27l6-6"/><path d="M11 21c-1-7 6-14 16-15-1 10-8 17-15 16z"/></svg></div>
         <h2>Makeup services</h2>
-        <div class="menu-rows">
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Occasion makeup</div>
-              <div class="menu-desc">A full face for formals, race days, parties and photoshoots.</div>
-            </div>
-            <div class="menu-price">&pound;40 &middot; 1 hr 30 mins</div>
+        <div class="price-tiles">
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Occasion makeup</h3><span class="price-tile-price">&pound;40</span></div>
+            <p class="price-tile-desc">A full face for formals, race days, parties and photoshoots.</p>
+            <span class="price-tile-duration">1 hr 30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Bridal trial</div>
-              <div class="menu-desc">A relaxed run-through of your look ahead of the big day.</div>
-            </div>
-            <div class="menu-price">&pound;75 &middot; 1 hr 30 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Bridal trial</h3><span class="price-tile-price">&pound;75</span></div>
+            <p class="price-tile-desc">A relaxed run-through of your look ahead of the big day.</p>
+            <span class="price-tile-duration">1 hr 30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Makeup &amp; skincare consultation</div>
-              <div class="menu-desc">A one-to-one to talk through products, routine and what will genuinely work for your skin.</div>
-            </div>
-            <div class="menu-price">&pound;25 &middot; 1 hr</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Makeup &amp; skincare consultation</h3><span class="price-tile-price">&pound;25</span></div>
+            <p class="price-tile-desc">A one-to-one to talk through products, routine and what will genuinely work for your skin.</p>
+            <span class="price-tile-duration">1 hr</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">SFX makeup</div>
-              <div class="menu-desc">Creative and special-effects artistry for costume, film or editorial work.</div>
-            </div>
-            <div class="menu-price">&pound;50 &middot; 2 hrs</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">SFX makeup</h3><span class="price-tile-price">&pound;50</span></div>
+            <p class="price-tile-desc">Creative and special-effects artistry for costume, film or editorial work.</p>
+            <span class="price-tile-duration">2 hrs</span>
           </div>
         </div>
         <p class="menu-group-note">On-the-day bridal party makeup is quoted individually: get in touch with your date and numbers for a tailored price. See recent looks in the <a href="portfolio.html#filter-makeup">makeup portfolio</a>.</p>
@@ -239,34 +221,26 @@
       <div class="menu-group menu-group-forest reveal" id="micropigmentation-pricing">
         <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 24L22 10L25 13L11 27Z"/><path d="M19 11l3 3"/></svg></div>
         <h2>Micropigmentation / Semi-Permanent Makeup</h2>
-        <div class="menu-rows">
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Micropigmentation brows</div>
-              <div class="menu-desc">Semi-permanent, hair-stroke definition for fuller-looking brows that hold their shape for months.</div>
-            </div>
-            <div class="menu-price">&pound;295 &middot; 2 hrs</div>
+        <div class="price-tiles">
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Micropigmentation brows</h3><span class="price-tile-price">&pound;295</span></div>
+            <p class="price-tile-desc">Semi-permanent, hair-stroke definition for fuller-looking brows that hold their shape for months.</p>
+            <span class="price-tile-duration">2 hrs</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Lash line enhancement</div>
-              <div class="menu-desc">A soft line of definition along the lashes for an awake, done look with zero daily effort.</div>
-            </div>
-            <div class="menu-price">&pound;75 &middot; 1 hr 30 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Lash line enhancement</h3><span class="price-tile-price">&pound;75</span></div>
+            <p class="price-tile-desc">A soft line of definition along the lashes for an awake, done look with zero daily effort.</p>
+            <span class="price-tile-duration">1 hr 30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Micropigmentation top-up</div>
-              <div class="menu-desc">Refresh and refine previous micropigmentation work between full sessions.</div>
-            </div>
-            <div class="menu-price">&pound;50 &middot; 2 hrs</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Micropigmentation top-up</h3><span class="price-tile-price">&pound;50</span></div>
+            <p class="price-tile-desc">Refresh and refine previous micropigmentation work between full sessions.</p>
+            <span class="price-tile-duration">2 hrs</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Pigment removal</div>
-              <div class="menu-desc">Gentle removal or lightening of unwanted micropigmentation or microblading.</div>
-            </div>
-            <div class="menu-price">&pound;50 &middot; 2 hrs</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Pigment removal</h3><span class="price-tile-price">&pound;50</span></div>
+            <p class="price-tile-desc">Gentle removal or lightening of unwanted micropigmentation or microblading.</p>
+            <span class="price-tile-duration">2 hrs</span>
           </div>
         </div>
         <p class="menu-group-note">All micropigmentation treatments require a prior consultation and patch test. See healed results in the <a href="portfolio.html#filter-micropigmentation">semi-permanent makeup portfolio</a>.</p>
@@ -275,34 +249,25 @@
       <div class="menu-group menu-group-linen reveal">
         <div class="icon-circle" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 6c1.2 5.4 4.4 8.6 9.8 9.8-5.4 1.2-8.6 4.4-9.8 9.8-1.2-5.4-4.4-8.6-9.8-9.8 5.4-1.2 8.6-4.4 9.8-9.8z"/></svg></div>
         <h2>Other</h2>
-        <div class="menu-rows">
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Gentleman&rsquo;s brow tidy</div>
-              <div class="menu-desc">A clean, natural shape-up for him.</div>
-            </div>
-            <div class="menu-price">&pound;15 &middot; 30 mins</div>
+        <div class="price-tiles">
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Gentleman&rsquo;s brow tidy</h3><span class="price-tile-price">&pound;15</span></div>
+            <p class="price-tile-desc">A clean, natural shape-up for him.</p>
+            <span class="price-tile-duration">30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Complementary wax and tint</div>
-              <div class="menu-desc">Wax and tint together in one relaxed appointment.</div>
-            </div>
-            <div class="menu-price">&pound;25 &middot; 1 hr 30 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Complementary wax and tint</h3><span class="price-tile-price">&pound;25</span></div>
+            <p class="price-tile-desc">Wax and tint together in one relaxed appointment.</p>
+            <span class="price-tile-duration">1 hr 30 mins</span>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Brow consultation</div>
-              <div class="menu-desc">A dedicated sit-down to talk through options before a full redesign or micropigmentation.</div>
-            </div>
-            <div class="menu-price">&pound;50</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Brow consultation</h3><span class="price-tile-price">&pound;50</span></div>
+            <p class="price-tile-desc">A dedicated sit-down to talk through options before a full redesign or micropigmentation.</p>
           </div>
-          <div class="menu-row">
-            <div>
-              <div class="menu-name">Post-treatment check</div>
-              <div class="menu-desc">A short follow-up appointment after semi-permanent makeup treatment.</div>
-            </div>
-            <div class="menu-price">&pound;10 &middot; 30 mins</div>
+          <div class="price-tile">
+            <div class="price-tile-head"><h3 class="price-tile-name">Post-treatment check</h3><span class="price-tile-price">&pound;10</span></div>
+            <p class="price-tile-desc">A short follow-up appointment after semi-permanent makeup treatment.</p>
+            <span class="price-tile-duration">30 mins</span>
           </div>
         </div>
       </div>
